@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
-    val utils = Utils()
+    private val utils = Utils()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -222,7 +222,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                             if (workInfo.state.isFinished) {
                                 if (workInfo.state == WorkInfo.State.SUCCEEDED) {
                                     val snackbar = Snackbar.make(
-                                        view,
+                                        activity.findViewById(android.R.id.content),
                                         "Controllo eseguito (swipe down)",
                                         Snackbar.LENGTH_LONG
                                     )
@@ -231,7 +231,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                                     snackbar.show()
                                 } else {
                                     val snackbar = Snackbar.make(
-                                        view,
+                                        activity.findViewById(android.R.id.content),
                                         "Errore durante il controllo",
                                         Snackbar.LENGTH_LONG
                                     )
@@ -246,7 +246,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                         }
                     }
                 }
-                liveData.observe(viewLifecycleOwner, observer)
+                //liveData.observe(viewLifecycleOwner, observer)
+                liveData.observeForever(observer)
             }
 
             val checkShitButton = view.findViewById<Button>(R.id.checkShitButton)
@@ -264,7 +265,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                                 if (workInfo.state.isFinished) {
                                     if (workInfo.state == WorkInfo.State.SUCCEEDED) {
                                         val snackbar = Snackbar.make(
-                                            view,
+                                            activity.findViewById(android.R.id.content),
                                             "Controllo eseguito (swipe down)",
                                             Snackbar.LENGTH_LONG
                                         )
@@ -273,7 +274,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                                         snackbar.show()
                                     } else {
                                         val snackbar = Snackbar.make(
-                                            view,
+                                            activity.findViewById(android.R.id.content),
                                             "Errore durante il controllo, riprovare",
                                             Snackbar.LENGTH_LONG
                                         )
@@ -288,7 +289,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                             }
                         }
                     }
-                    liveData.observe(viewLifecycleOwner, observer)
+                    //liveData.observe(viewLifecycleOwner, observer)
+                    liveData.observeForever(observer)
                 } else {
                     val snackbar = Snackbar.make(
                         view,
@@ -335,9 +337,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                 view?.findViewById<LinearLayout>(R.id.folderLayout)?.visibility = View.VISIBLE
                 view?.findViewById<LinearLayout>(R.id.home)?.visibility = View.GONE
             }
-
-            updateOccupiedSpace()
         }
+        updateOccupiedSpace()
     }
 
     private fun updateOccupiedSpace() {
