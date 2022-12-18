@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/pdf"
+        android:icon="@drawable/ic_pdf"
+        android:title="Apri pdf"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/browser"
+        android:icon="@drawable/ic_browser"
+        android:title="Apri browser"
+        app:showAsAction="ifRoom" />
+    
+</menu>

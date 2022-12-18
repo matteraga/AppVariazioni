@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Variazioni</string>
+
+    <string-array name="classrooms_array">
+        <item>4G</item>
+        <item>1G</item>
+    </string-array>
+</resources>
