@@ -105,10 +105,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
             //val elapsedSeconds: Long = difference / secondsInMilli
 
-            println(elapsedMinutes)
-            println(elapsedHours)
-            println(elapsedDays)
-
             if (elapsedMinutes < 1) {
                 lastCheckText.text = "Ora"
             } else if (elapsedHours < 1) {

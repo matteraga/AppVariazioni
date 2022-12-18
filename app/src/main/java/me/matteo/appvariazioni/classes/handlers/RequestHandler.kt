@@ -37,7 +37,6 @@ class RequestHandler {
             if (currentTime.get(Calendar.DAY_OF_YEAR) != responseTime.get(Calendar.DAY_OF_YEAR) ||
                 currentTime.get(Calendar.YEAR) != responseTime.get(Calendar.YEAR)
             ) {
-                println(false)
                 response.close()
                 return Response(false)
             }
