@@ -1,5 +1,7 @@
 package me.matteo.appvariazioni.classes
 
+import me.matteo.appvariazioni.R
+
 object Key {
     //Preferences
     //Variation
@@ -48,20 +50,20 @@ object Type {
 }
 
 object Icon {
-    //Subjects
-    const val COMPUTER_SCIENCE = 0
-    const val ENGLISH = 1
-    const val HISTORY = 2
-    const val ITALIAN = 3
-    const val MATH = 4
-    const val NETWORKS = 5
-    const val PE = 6
-    const val RELIGION = 7
-    const val TELECOMMUNICATIONS = 8
-    const val TPSIT = 9
+    // Subjects
+    const val COMPUTER_SCIENCE = R.drawable.icon_computer_science
+    const val ENGLISH = R.drawable.icon_english
+    const val HISTORY = R.drawable.icon_history
+    const val ITALIAN = R.drawable.icon_italian
+    const val MATH = R.drawable.icon_math
+    const val NETWORKS = R.drawable.icon_networks
+    const val PE = R.drawable.icon_pe
+    const val RELIGION = R.drawable.icon_religion
+    const val TELECOMMUNICATIONS = R.drawable.icon_telecommunications
+    const val TPSIT = R.drawable.icon_tpsit
 
-    //Variation
-    const val EXIT = 10
-    const val ENTRY = 11
-    const val SUBSTITUTE = 12
+    // Variation
+    const val EXIT =  R.drawable.icon_early_exit
+    const val ENTRY =  R.drawable.icon_late_entry
+    const val SUBSTITUTE =  R.drawable.icon_substitution
 }

@@ -53,23 +53,9 @@ class ListViewAdapter(context: Context?, items: List<ListViewItem>?) :
                 convertView.findViewById<TextView>(R.id.normalSubtitle).text = current.subtitle
                 convertView.findViewById<TextView>(R.id.background)
                     .setBackgroundColor(Color.parseColor(current.color))
-                val image = when (current.image) {
-                    Icon.HISTORY -> R.drawable.history
-                    Icon.ENGLISH -> R.drawable.english
-                    Icon.PE -> R.drawable.pe
-                    Icon.MATH -> R.drawable.math
-                    Icon.ITALIAN -> R.drawable.italian
-                    Icon.COMPUTER_SCIENCE -> R.drawable.computer_science
-                    Icon.NETWORKS -> R.drawable.networks
-                    Icon.RELIGION -> R.drawable.religion
-                    Icon.TELECOMMUNICATIONS -> R.drawable.telecommunications
-                    Icon.TPSIT -> R.drawable.tpsit
-                    Icon.ENTRY -> R.drawable.late_entry
-                    Icon.EXIT -> R.drawable.early_exit
-                    Icon.SUBSTITUTE -> R.drawable.substitution
-                    else -> R.drawable.ic_launcher_foreground
+                if (current.image != null) {
+                    convertView.findViewById<ImageView>(R.id.imageView).setImageResource(current.image)
                 }
-                convertView.findViewById<ImageView>(R.id.imageView).setImageResource(image)
             }
             Type.SIMPLE_TEXT_BACKGROUND -> {
                 convertView = inflater.inflate(R.layout.simple_text_view, container, false)
