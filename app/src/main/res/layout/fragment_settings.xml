@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
+    android:orientation="vertical"
     tools:context=".fragments.SettingsFragment">
 
     <TextView
@@ -12,64 +13,76 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Generali"
-        android:textStyle="bold"
-        android:textColor="?android:textColorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
+    <com.google.android.material.materialswitch.MaterialSwitch
         android:id="@+id/backgroundSwitch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:text="Controllo automatico"
-        android:checked="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsText" />
-
-    <LinearLayout
-        android:id="@+id/classroomLayout"
+        style="@style/Theme.AppVariazioni.MaterialSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:checked="false"
         android:minHeight="48dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backgroundSwitch">
+        android:text="Controllo automatico"
+        android:textColor="?attr/textFillColor" />
+
+    <LinearLayout
+        android:id="@+id/timeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Classe"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:gravity="center_vertical"
+            android:text="Orario"
+            android:textColor="?attr/textFillColor" />
 
-        <Spinner
-            android:id="@+id/classroomSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="19:00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/schoolClassLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Classe"
+            android:textColor="?attr/textFillColor" />
+
+        <TextView
+            android:id="@+id/schoolClassText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="4G" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/permissionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="16dp"
         android:text="Permessi"
-        android:textColor="?android:textColorPrimary"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classroomLayout" />
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/notificationLayout"
@@ -77,11 +90,7 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:orientation="vertical"
-        android:paddingBottom="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/permissionText">
+        android:paddingBottom="16dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -89,7 +98,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="Notifiche"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:textColor="?attr/textFillColor" />
 
         <TextView
             android:id="@+id/notificationText"
@@ -101,16 +110,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/selectedFolderLayout"
+        android:id="@+id/folderLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:orientation="vertical"
-        android:paddingBottom="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notificationLayout">
+        android:paddingBottom="16dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -118,10 +123,10 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="Cartella"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:textColor="?attr/textFillColor" />
 
         <TextView
-            android:id="@+id/selectedFolderText"
+            android:id="@+id/folderText"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -133,59 +138,40 @@
         android:id="@+id/fileText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
         android:text="File"
-        android:textColor="?android:textColorPrimary"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedFolderLayout" />
+        android:textColor="?attr/colorSecondary"
+        android:textStyle="bold" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/saveFileSwitch"
+        style="@style/Theme.AppVariazioni.MaterialSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:minHeight="48dp"
+        android:text="Salva i PDF"
+        android:textColor="?attr/textFillColor" />
 
     <LinearLayout
         android:id="@+id/fileLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fileText">
+        android:paddingBottom="16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="Elimina variazioni salvate"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:textColor="?attr/textFillColor" />
 
         <TextView
-            android:id="@+id/occupiedSpaceTxt"
+            android:id="@+id/occupiedSpaceText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0.0MB" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/checkButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Controlla sito scuola"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fileLayout" />
-
-    <Button
-        android:id="@+id/checkShitButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Controlla sito di 💩"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkButton" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

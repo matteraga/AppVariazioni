@@ -8,9 +8,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutHome"
-        style="@style/Widget.MaterialComponents.TabLayout.Colored"
+        style="@style/Theme.AppVariazioni.TabLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -33,11 +33,11 @@
         android:id="@+id/lastCheckLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:background="@drawable/border_top"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:background="@drawable/border_top"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -46,15 +46,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ultimo controllo (tutto): "
-            android:textColor="?android:attr/textColorPrimary" />
+            android:text="Ultimo controllo: "
+            android:textColor="?attr/textFillColor" />
 
         <TextView
             android:id="@+id/lastCheckText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mai"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:textColor="?attr/textFillColor" />
 
     </LinearLayout>
 
