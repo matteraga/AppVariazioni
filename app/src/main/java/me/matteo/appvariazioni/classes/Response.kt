@@ -1,6 +1,7 @@
 package me.matteo.appvariazioni.classes
 
 import android.net.Uri
+import me.matteo.appvariazioni.classes.variations.Hourly
 
 data class Response(
     val success: Boolean,
@@ -9,6 +10,7 @@ data class Response(
     val stringList: List<String>,
     val uri: Uri,
     val bool: Boolean,
+    val variations: Collection<Hourly>
 ) {
     constructor(success: Boolean) : this(
         success,
@@ -16,7 +18,8 @@ data class Response(
         byteArrayOf(),
         emptyList(),
         Uri.EMPTY,
-        false
+        false,
+        emptyList()
     )
 
     constructor(success: Boolean, string: String) : this(
@@ -25,7 +28,8 @@ data class Response(
         byteArrayOf(),
         emptyList(),
         Uri.EMPTY,
-        false
+        false,
+        emptyList()
     )
 
     constructor(success: Boolean, bytes: ByteArray) : this(
@@ -34,7 +38,8 @@ data class Response(
         bytes,
         emptyList(),
         Uri.EMPTY,
-        false
+        false,
+        emptyList()
     )
 
     constructor(success: Boolean, stringList: List<String>) : this(
@@ -43,7 +48,8 @@ data class Response(
         byteArrayOf(),
         stringList,
         Uri.EMPTY,
-        false
+        false,
+        emptyList()
     )
 
     constructor(success: Boolean, uri: Uri) : this(
@@ -52,7 +58,8 @@ data class Response(
         byteArrayOf(),
         emptyList(),
         uri,
-        false
+        false,
+        emptyList()
     )
 
     constructor(success: Boolean, string: String, bytes: ByteArray) : this(
@@ -61,7 +68,8 @@ data class Response(
         bytes,
         emptyList(),
         Uri.EMPTY,
-        false
+        false,
+        emptyList()
     )
 
     constructor(success: Boolean, bool: Boolean) : this(
@@ -70,6 +78,17 @@ data class Response(
         byteArrayOf(),
         emptyList(),
         Uri.EMPTY,
-        bool
+        bool,
+        emptyList()
+    )
+
+    constructor(success: Boolean, list: Collection<Hourly>) : this(
+        success,
+        "",
+        byteArrayOf(),
+        emptyList(),
+        Uri.EMPTY,
+        false,
+        list
     )
 }
