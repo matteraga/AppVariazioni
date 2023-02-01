@@ -1,8 +1,19 @@
 <resources>
     <string name="app_name">Variazioni</string>
 
-    <string-array name="classrooms_array">
-        <item>4G</item>
-        <item>1G</item>
+    <string-array name="letters">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
     </string-array>
 </resources>
