@@ -8,7 +8,6 @@ import java.io.OutputStream
 import java.util.regex.Pattern
 
 class FileHandler {
-
     suspend fun savePDF(context: Context, bytes: ByteArray, fileName: String): Response {
         try {
             val contentResolver = context.contentResolver

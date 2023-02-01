@@ -30,7 +30,6 @@ class VariationsFragment : Fragment(R.layout.fragment_variations) {
 
     private fun updateUI(view: View) {
         val listView = view.findViewById<ListView>(R.id.listViewVariations)
-        val errorTxt = view.findViewById<TextView>(R.id.errorTextVariations)
 
         val dayKey = arguments?.getString("dayKey", "")
         val classroomKey = arguments?.getString("classroomKey", "")
@@ -83,17 +82,17 @@ class VariationsFragment : Fragment(R.layout.fragment_variations) {
                 content
             )
             listView.adapter = adapter
-            listView.visibility = View.VISIBLE
-            errorTxt.visibility = View.GONE
 
             if (requireActivity().supportFragmentManager.findFragmentByTag("home") is HomeFragment) {
                 val home = requireActivity().supportFragmentManager.findFragmentByTag("home") as HomeFragment
                 home.updateLastCheckAndTabsName()
             }
         } else {
-            listView.visibility = View.GONE
-            errorTxt.visibility = View.VISIBLE
-            errorTxt.text = "Errore"
+            val adapter = ListViewAdapter(
+                requireActivity(),
+                listOf(ListViewItem(Type.SIMPLE_TEXT_BACKGROUND, "Errore"))
+            )
+            listView.adapter = adapter
         }
     }
 }

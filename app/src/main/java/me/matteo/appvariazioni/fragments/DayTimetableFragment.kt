@@ -264,7 +264,6 @@ class DayTimetableFragment : Fragment(R.layout.fragment_day_timetable) {
 
     private fun updateUI(view: View) {
         val listView = view.findViewById<ListView>(R.id.listViewTimetable)
-        val errorTxt = view.findViewById<TextView>(R.id.errorTextTimetable)
 
         val day = arguments?.getInt("day", -1) ?: -1
 
@@ -318,17 +317,17 @@ class DayTimetableFragment : Fragment(R.layout.fragment_day_timetable) {
                 content
             )
             listView.adapter = adapter
-            listView.visibility = View.VISIBLE
-            errorTxt.visibility = View.GONE
 
             if (requireActivity().supportFragmentManager.findFragmentByTag("timetable") is TimetableFragment) {
                 val timetable = requireActivity().supportFragmentManager.findFragmentByTag("timetable") as TimetableFragment
                 timetable.updateTabsName()
             }
         } else {
-            listView.visibility = View.GONE
-            errorTxt.visibility = View.VISIBLE
-            errorTxt.text = "Errore"
+            val adapter = ListViewAdapter(
+                requireActivity(),
+                listOf(ListViewItem(Type.SIMPLE_TEXT_BACKGROUND, "Errore"))
+            )
+            listView.adapter = adapter
         }
     }
 }
